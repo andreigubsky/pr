@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+
+        </style>
+        <script src="index.js" type="text/javascript"></script>
+        <script>
+        function addStyle(){
+            //document.head.appendChild(document.createElement('style'));
+            alert ("Стили залетели");
+          } 
+        </script>
+          </head>
+    </head>
+    <body>
+        <h1>ITRD</h1>
+        <ul class = "styleUl" id = "ul">
+            <li>Net Profit</li>
+            <li>Revenue</li>
+            <p class="guesses"></p>
+            
+        </ul>
+        <input type="button" onclick="addStyle()" value="Стили!">
+        <input type="button" onclick="addStyleOut()" value="Внешние Стили!">
+        <input type="button" onclick="addLi()" value="Новый пункт!">
+
+        <script>
+            function countRabbits() {
+              for(let i=1; i<=3; i++) {
+                alert("Кролик номер " + i);
+              }
+            }
+          </script>
+          
+          <input type="button" onclick="countRabbits()" value="Считать кроликов!">
+    </body>
+</html>
