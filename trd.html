@@ -3,6 +3,18 @@
         <script src = "trd.js"></script>
     </head>
     <body>
-        <input value="Нажми меня" onclick="addDiv()" type="button">
+        <h1>Robot TRD</h1>
+        <p><b>Курс меньше:</b><br>
+        <input type="text" size="20" id="lessThen">
+        <br/>
+        <p><b>Курс больше:</b><br>
+            <input type="text" size="20" id="moreThen">
+            <br/>
+        <input value="Сохранить" onclick="addSet()" type="button">
+        <input value="Сброс" onclick="clearSet()" type="button">
+
+        <input value="Отправить" onclick="sendEmail()" type="button">
+
+
     </body>
 </html>

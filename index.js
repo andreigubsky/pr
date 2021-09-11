@@ -11,6 +11,6 @@ function addLi(){
   
 
   function addStyleOut(){
-    //document.head.appendChild(document.createElement('style'));
+    document.head.appendChild(document.createElement('style'));
     alert ("Стили внешние залетели");
   } 
