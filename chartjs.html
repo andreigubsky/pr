@@ -7,7 +7,13 @@
 </style>
 
 <script>
+// Получаем canvas элемент
+var canvas = document.getElementById('canvas'); 
+// Указываем элемент для 2D рисования
+var ctx = canvas.getContext('2d');
+
 function fillData(){
+
 var courses = new Array(
     3240,
     3250,
@@ -34,40 +40,45 @@ var courses = new Array(
     3420,
     3400
     );
-
-    var twoDimens = new Array(courses, houres);
-    var houres = new Array();
+    
     var n = 0;
-
-for(var i = 0; i < 24; i++){
+    var houres = new Array();
+    for(var i = 0; i < 24; i++){
         houres[n] = i;
-        //Инкрементируем индекс
         n++;
-        alert(n,i);
     }
-}
+    var twoDimens = new Array(houres, courses);
 
-function a(){
-    alert('aaa');
-}
+    
+        //for (var y = 0; y<24; y++){
+            //alert (courses [x]);
+        //}
+    
 
-</script>
-
-<script>
-// Получаем canvas элемент
-let canvas = document.getElementById('canvas'); 
+    ctx.strokeStyle = "blue"; // Задаём чёрный цвет для линий 
+    ctx.lineWidth = 2.0; // Ширина линии
+    ctx.translate(0, canvas.height);
+    ctx.rotate(-Math.PI/2);
+    ctx.beginPath(); // Запускает путь
+    //ctx.moveTo(0, 310); // Указываем начальный путь
  
-// Указываем элемент для 2D рисования
-let ctx = canvas.getContext('2d');
+    //ctx.lineTo(50, 20); // Ещё раз перемешаем указатель
+    //ctx.moveTo(120,320);
+    //ctx.lineTo(120,320);
 
+    
+    
+    //for (var x = 0; x<5; x++){
+        var x = 0;
+        ctx.moveTo(courses [x]/10,50);
+        ctx.lineTo(courses [x]/10,200); // Перемешаем указатель
+        
+    alert (x);
 
-ctx.fillStyle = "blue"; // Задаём чёрный цвет для линий 
-ctx.lineWidth = 1.0; // Ширина линии
-ctx.beginPath(); // Запускает путь
-ctx.moveTo(30, 10); // Указываем начальный путь
-ctx.lineTo(30, 20); // Перемешаем указатель
-ctx.lineTo(500, 20); // Ещё раз перемешаем указатель
-ctx.stroke(); // Делаем контур
+    ctx.stroke(); // Делаем контур
+    //ctx.fill(); // Делаем заливку
+
+}
 </script>
 
 
