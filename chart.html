@@ -41,9 +41,9 @@
    }
   });
   //Заполняем данными
-  for (var x = 0.0; x<=2*Math.PI; x+=Math.PI/10) {
-   myChart.data.labels.push(''+x.toFixed(2));
-   myChart.data.datasets[0].data.push(f(x).toFixed(2));
+  for (var x = 0.0; x<=2*Math.PI; x+=Math.PI/2) {
+   myChart.data.labels.push(''+x.toFixed(0));
+   myChart.data.datasets[0].data.push(f(x).toFixed(0));
   }
   //Обновляем
   myChart.update();
@@ -54,7 +54,7 @@
     // var c2 = 2;
     // var x = 3;
     // var z = b + c1*Math.pow(x, 2) + c2*Math.pow(x, 3);
-    return Math.log(x);
+    return Math.pow(x,2);
 };
  }
 

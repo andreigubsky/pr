@@ -1,0 +1,75 @@
+
+<canvas width="500" height="500" id="canvas"></canvas>
+<style>
+    #canvas {
+    border: 1px solid black;
+    }
+</style>
+
+<script>
+function fillData(){
+var courses = new Array(
+    3240,
+    3250,
+    3240,
+    3280,
+    3240,
+    3260,
+    3240,
+    3280,
+    3280,
+    3310,
+    3330,
+    3300,
+    3290,
+    3320,
+    3400,
+    3410,
+    3440,
+    3400,
+    3450,
+    3420,
+    3430,
+    3410,
+    3420,
+    3400
+    );
+
+    var twoDimens = new Array(courses, houres);
+    var houres = new Array();
+    var n = 0;
+
+for(var i = 0; i < 24; i++){
+        houres[n] = i;
+        //Инкрементируем индекс
+        n++;
+        alert(n,i);
+    }
+}
+
+function a(){
+    alert('aaa');
+}
+
+</script>
+
+<script>
+// Получаем canvas элемент
+let canvas = document.getElementById('canvas'); 
+ 
+// Указываем элемент для 2D рисования
+let ctx = canvas.getContext('2d');
+
+
+ctx.fillStyle = "blue"; // Задаём чёрный цвет для линий 
+ctx.lineWidth = 1.0; // Ширина линии
+ctx.beginPath(); // Запускает путь
+ctx.moveTo(30, 10); // Указываем начальный путь
+ctx.lineTo(30, 20); // Перемешаем указатель
+ctx.lineTo(500, 20); // Ещё раз перемешаем указатель
+ctx.stroke(); // Делаем контур
+</script>
+
+
+<br/>
+<input type="button" onclick="fillData()" value="Заполнить массив!">
