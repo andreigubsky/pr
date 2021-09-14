@@ -57,8 +57,8 @@ var courses = new Array(
 
     ctx.strokeStyle = "blue"; // Задаём чёрный цвет для линий 
     ctx.lineWidth = 2.0; // Ширина линии
-    ctx.translate(0, canvas.height);
-    ctx.rotate(-Math.PI/2);
+    //ctx.translate(0, canvas.height);
+    //ctx.rotate(-Math.PI/2);
     ctx.beginPath(); // Запускает путь
     //ctx.moveTo(0, 310); // Указываем начальный путь
  
@@ -67,15 +67,40 @@ var courses = new Array(
     //ctx.lineTo(120,320);
 
     
-    
+/*     
     //for (var x = 0; x<5; x++){
         var x = 0;
         ctx.moveTo(courses [x]/10,50);
         ctx.lineTo(courses [x]/10,200); // Перемешаем указатель
         
-    alert (x);
+    alert (x); */
 
-    ctx.stroke(); // Делаем контур
+ctx.fillStyle = "black"; // Задаём чёрный цвет для линий 
+ctx.lineWidth = 2.0; // Ширина линии
+ctx.beginPath(); // Запускает путь
+ctx.moveTo(30, 10); // Указываем начальный путь
+ctx.lineTo(30, 460); // Перемешаем указатель
+ctx.lineTo(500, 460); // Ещё раз перемешаем указатель
+ctx.stroke(); // Делаем конту
+    ctx.fillStyle = "black";
+// Цикл для отображения значений по Y 
+for(let i = 0; i < 6; i++) { 
+    ctx.fillText((5 - i) * 20 + "", 4, i * 80 + 60); 
+    ctx.beginPath(); 
+    ctx.moveTo(25, i * 80 + 60); 
+    ctx.lineTo(30, i * 80 + 60); 
+    ctx.stroke(); 
+}
+ 
+// Массив с меткам месяцев
+let labels = ["JAN", "FEB", "MAR", "APR", "MAY"]; 
+ 
+// Выводим меток
+for(var i=0; i<5; i++) { 
+    ctx.fillText(labels[i], 50+ i*100, 475); 
+}
+
+    //ctx.stroke(); // Делаем контур
     //ctx.fill(); // Делаем заливку
 
 }

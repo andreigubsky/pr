@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="./charts/Chart.min.css">
+<script src="./charts/Chart.min.js"></script>
+
+<canvas id="myChart"></canvas>
+
+<script>
+let ctx = document.getElementById('myChart').getContext('2d');
+let chart = new Chart(ctx, {
+// Тип графика
+type: 'line',
+ 
+// Создание графиков
+data: {
+    // Точки графиков
+    labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
+    // График
+    datasets: [{
+        label: 'Мой первый график на Chart.js', // Название
+        backgroundColor: 'rgb(255, 99, 132)', // Цвет закраски
+        borderColor: 'rgb(255, 99, 132)', // Цвет линии
+        data: [0, 10, 5, 2, 20, 30, 45] // Данные каждой точки графика
+    }]
+},
+ 
+// Настройки графиков
+options: {}
+});
+</script>
+
+<canvas id="myChart2"></canvas>
+<script>
+let ctx = document.getElementById('myChart2').getContext('2d');
+let chart = new Chart(ctx, {
+    type: 'line',
+ 
+    data: {
+        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
+        datasets: [
+        { // График зелёного цвета
+            label: 'График 1',
+            backgroundColor: 'transparent',
+            borderColor: 'green',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        { // График синего цвета
+            label: 'График 2',
+            backgroundColor: 'transparent',
+            borderColor: 'blue',
+            data: [5, 3, 10, 30, 40, 20, 5]
+        },
+        { // График красного цвета
+            label: 'График 3',
+            backgroundColor: 'transparent',
+            borderColor: 'red',
+            data: [20, 15, 10, 30, 25, 30, 35]
+        }],
+    },
+});
+</script>

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="./charts/Chart.min.css">
+<script src="./charts/Chart.min.js"></script>
+
+<canvas id="myChart"></canvas>
+<script>
+let ctx = document.getElementById('myChart').getContext('2d');
+let chart = new Chart(ctx, {
+    type: 'line',
+ 
+    data: {
+        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
+        datasets: [
+        { // График зелёного цвета
+            label: 'Линия поддержки',
+            backgroundColor: 'transparent',
+            borderColor: 'green',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        { // График синего цвета
+            label: 'Линия сопротивления',
+            backgroundColor: 'transparent',
+            borderColor: 'blue',
+            data: [5, 3, 10, 30, 40, 20, 5]
+        },
+        { // График красного цвета
+            label: 'Скользящее среднее',
+            backgroundColor: 'transparent',
+            borderColor: 'red',
+            data: [20, 15, 10, 30, 25, 30, 35]
+        }],
+    },
+});
+</script>
