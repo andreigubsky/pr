@@ -3,31 +3,87 @@
 
 <canvas id="myChart"></canvas>
 <script>
+    var courses = new Array(3240, 3250, 3240, 3280, 3240, 3260, 3240, 3280, 3280, 3310, 3330, 3300, 3290, 3320, 3400, 3410, 3440, 3400, 3450, 3420, 3430, 3410, 3420, 3400);
+
+    //поиск мин и макс знач
+
+ /*   min = courses[0];
+  max = min;
+  for (i = 1; i < courses.length; ++i) {
+      if (courses[i] > max) max = courses[i];
+      if (courses[i] < min) min = courses[i];
+  }*/
+  var min = courses.min();
+  var max = courses.max();
+
+
+alert ('min:'+min);
+alert ('max:'+max);
+
 let ctx = document.getElementById('myChart').getContext('2d');
+
 let chart = new Chart(ctx, {
     type: 'line',
  
     data: {
-        labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль'],
+        labels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'],
+        
         datasets: [
         { // График зелёного цвета
             label: 'Линия поддержки',
             backgroundColor: 'transparent',
-            borderColor: 'green',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            borderColor: 'black',
+            data: [
+                    3240,
+                    3250,
+                    3240,
+                    3280,
+                    3240,
+                    3260,
+                    3240,
+                    3280,
+                    3280,
+                    3310,
+                    3330,
+                    3300,
+                    3290,
+                    3320,
+                    3400,
+                    3410,
+                    3440,
+                    3400,
+                    3450,
+                    3420,
+                    3430,
+                    3410,
+                    3420,
+                    3400],
         },
-        { // График синего цвета
+        {// График зеленого цвета
+            label: 'Линия поддержки',
+            backgroundColor: 'transparent',
+            borderColor: 'yellow',
+            data: [min,max]
+        },
+         {// График зеленого цвета
+            label: 'Линия поддержки',
+            backgroundColor: 'transparent',
+            borderColor: 'green',
+            data: [3240,3250]
+        },
+       { // График красного цвета
             label: 'Линия сопротивления',
             backgroundColor: 'transparent',
-            borderColor: 'blue',
-            data: [5, 3, 10, 30, 40, 20, 5]
+            borderColor: 'red',
+            data: [, 3250, 3240]
         },
-        { // График красного цвета
+        { // График синего цвета
             label: 'Скользящее среднее',
             backgroundColor: 'transparent',
-            borderColor: 'red',
-            data: [20, 15, 10, 30, 25, 30, 35]
-        }],
+            borderColor: 'blue',
+            data: [,,3240, 3280]
+        } 
+    ],
     },
 });
 </script>
